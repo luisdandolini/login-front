@@ -1,10 +1,19 @@
-<form>
+<form [formGroup]="registerForm">
   <h1>Cadastro</h1>
 
   <div>
     <input 
       type="text" 
       placeholder="Nome"
+      formControlName="name"
+    />
+  </div>
+
+  <div>
+    <input 
+      type="email" 
+      placeholder="Email"
+      formControlName="email"
     />
   </div>
 
@@ -12,8 +21,9 @@
     <input 
       type="password" 
       placeholder="Senha"
+      formControlName="password"
     />
   </div>
 
-  <button>Cadastre-se</button>
+  <button (click)="createUser()">Cadastre-se</button>
 </form>
