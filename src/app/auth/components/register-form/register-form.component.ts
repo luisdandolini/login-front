@@ -31,12 +31,11 @@ export class RegisterFormComponent {
   createUser() {
     if (this.registerForm.valid) {
       const userData = this.registerForm.value;
-
+      console.log(userData)
       this.registerService.createUser(userData).subscribe({
         next: () => {
-         
           this.swalService.success.fire('Usuário criado com sucesso!');
-          this.router.navigate(['/']);
+          this.router.navigate(['/login']);
         },
         error: () => {
           this.swalService.error.fire('Erro ao criar o usuário!');

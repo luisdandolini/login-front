@@ -3,8 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
-const imports = [RouterModule, FormsModule, ReactiveFormsModule, CommonModule];
+const imports = [RouterModule, FormsModule, ReactiveFormsModule, CommonModule,
+  ];
 
 const providers = [DatePipe];
 

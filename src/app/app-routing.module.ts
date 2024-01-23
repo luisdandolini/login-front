@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaseGuard } from './core/guards/base.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -9,12 +11,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: '',
-    loadChildren: () => import('./base/base.module').then(m => m.BaseModule)
-  }
+    loadChildren: () => import('./base/base.module').then(m => m.BaseModule),
+    canActivate: [BaseGuard]
+
+  },
+
 ];
 
 @NgModule({
